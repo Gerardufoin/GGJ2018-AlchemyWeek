@@ -10,7 +10,7 @@ Thibault "Gerardufoin" Duval
 Kenney (https://kenney.nl/)
 
 #### Music
-"Court of the Queen" Kevin MacLeod (incompetech.com)
-"Crinoline Dreams" Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 3.0 License
+"Court of the Queen" Kevin MacLeod (incompetech.com)  
+"Crinoline Dreams" Kevin MacLeod (incompetech.com)  
+Licensed under Creative Commons: By Attribution 3.0 License  
 http://creativecommons.org/licenses/by/3.0/
