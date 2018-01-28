@@ -1,5 +1,7 @@
 # GGJ2018-AlchemyWeek
-Solo project realised in 2.5 days for the Global Game Jam 2018. [Link to the GGJ page](https://globalgamejam.org/2018/games/alchemy-week)
+Solo project realised in 2.5 days for the Global Game Jam 2018.  
+[GGJ page](https://globalgamejam.org/2018/games/alchemy-week)  
+[Play the game](https://gerardufoin.github.io/GGJ2018-AlchemyWeek/)
 
 ## Credits
 
