@@ -6,6 +6,8 @@ TagManager:
   tags:
   - StudentSlot
   - Student
+  - Teacher
+  - Answer
   layers:
   - Default
   - TransparentFX

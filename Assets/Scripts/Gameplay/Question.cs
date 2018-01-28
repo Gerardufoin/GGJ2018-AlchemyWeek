@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Question : MonoBehaviour
 {
+    const float ANSWER_TIME = 5f;
+
     public enum E_QuestionType
     {
         COLOR,
@@ -27,6 +29,21 @@ public class Question : MonoBehaviour
     private QuestionManager m_qManager;
     private bool m_answered;
     private bool m_success;
+
+    private float m_timer;
+    private Renderer m_timeBarRenderer;
+
+    private void Start()
+    {
+        m_timeBarRenderer = GameObject.FindGameObjectWithTag("Teacher").transform.Find("TimeBar").GetComponent<Renderer>();
+        m_timeBarRenderer.gameObject.SetActive(true);
+        m_timeBarRenderer.material.SetFloat("_Fill", 1);
+    }
+
+    private void OnDestroy()
+    {
+        m_timeBarRenderer.gameObject.SetActive(false);
+    }
 
     public void Init(List<Exercise.ExerciseElement> elements)
     {
@@ -61,6 +78,24 @@ public class Question : MonoBehaviour
         {
             m_questionLink[0].Renderer.color = m_qManager.GetRandomColor();
             m_qManager.CreateValidationAnswer(this, elements[m_questionLink[0].ExerciseElementIndex].Renderer, m_questionLink[0].Renderer);
+        }
+    }
+
+    public void Update()
+    {
+        if (!m_answered && (m_timer += Time.deltaTime) > ANSWER_TIME)
+        {
+            m_answered = true;
+            m_success = false;
+            GameObject[] answers = GameObject.FindGameObjectsWithTag("Answer");
+            for (int i = 0; i < answers.Length; ++i)
+            {
+                answers[i].SetActive(false);
+            }
+        }
+        else
+        {
+            m_timeBarRenderer.material.SetFloat("_Fill", 1 - Mathf.Clamp01(m_timer / ANSWER_TIME));
         }
     }
 
