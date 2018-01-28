@@ -13,8 +13,6 @@ public class SoundsManager : MonoBehaviour
     [SerializeField]
     private AudioClip m_gameOver;
     [SerializeField]
-    private float m_gameOverVolume = 0.5f;
-    [SerializeField]
     private float m_fadeOutTimer = 2.0f;
 
     private AudioSource m_audioSource;

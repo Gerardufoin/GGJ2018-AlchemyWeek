@@ -38029,10 +38029,10 @@ RectTransform:
   m_Father: {fileID: 1369422824}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 299.69, y: 175.3}
-  m_SizeDelta: {x: 116.19, y: 25.58}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -100.31006, y: -49.69995}
+  m_SizeDelta: {x: 116.19, y: 25.580002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &378836509
 MonoBehaviour:
@@ -41067,6 +41067,11 @@ Prefab:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224561839184142936, guid: 049b4af1ea8735549b54708b9c751a21,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 26.199951
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 049b4af1ea8735549b54708b9c751a21, type: 2}
   m_IsPrefabParent: 0
@@ -41432,7 +41437,6 @@ MonoBehaviour:
   m_question: {fileID: 8300000, guid: cb78f877c50334c428103e85ed5b74c1, type: 3}
   m_experience: {fileID: 8300000, guid: 0cee7b68ca1afdd4cb1a2d0a42eaab18, type: 3}
   m_gameOver: {fileID: 0}
-  m_gameOverVolume: 0.5
   m_fadeOutTimer: 2
 --- !u!114 &1786283935
 MonoBehaviour:
