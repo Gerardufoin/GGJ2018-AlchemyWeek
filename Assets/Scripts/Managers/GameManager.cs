@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     private SoundsManager m_sManager;
     private QuestionManager m_qManager;
+    private ScoreManager m_scoreManager;
     private Stack<Student> m_studentsList = new Stack<Student>();
 
     private QuestionManager.ChemistryData m_currentExercise = null;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         m_qManager = GameObject.FindObjectOfType<QuestionManager>();
         m_sManager = GameObject.FindObjectOfType<SoundsManager>();
+        m_scoreManager = GameObject.FindObjectOfType<ScoreManager>();
         m_currentDay = Mathf.Clamp(m_currentDay, 1, MAX_DAYS);
         m_text.text = m_days[m_currentDay - 1];
         m_transition.FadeIn();
@@ -66,12 +68,18 @@ public class GameManager : MonoBehaviour
                 Student student = m_studentsList.Pop();
                 bool rightAnswer = question.IsAnswerRight();
                 student.CraftPotion(rightAnswer);
+                GameObject.Destroy(question.gameObject);
+                yield return new WaitForSeconds((rightAnswer ? 1.5f : 2.8f));
                 if (!rightAnswer)
                 {
                     studentAlive -= 1;
+                    m_scoreManager.KillStudent();
                 }
-                GameObject.Destroy(question.gameObject);
-                yield return new WaitForSeconds((rightAnswer ? 3.0f : 5.0f));
+                else
+                {
+                    m_scoreManager.SaveStudent(question.GetTimeLeft());
+                }
+                yield return new WaitForSeconds(2.0f);
             }
             GameObject.Destroy(exercise.gameObject);
             if (m_studentsList.Count > 0)

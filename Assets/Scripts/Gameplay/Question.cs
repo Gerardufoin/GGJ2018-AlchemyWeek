@@ -114,4 +114,9 @@ public class Question : MonoBehaviour
     {
         return m_success;
     }
+
+    public float GetTimeLeft()
+    {
+        return ANSWER_TIME - m_timer;
+    }
 }
